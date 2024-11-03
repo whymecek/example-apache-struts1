@@ -2,6 +2,7 @@ package co.id.infoflow.actions;
 
 import co.id.infoflow.services.HeheService;
 import co.id.infoflow.services.TestService;
+import no.hackeriet.struts1Spring.struts.SpringBindingActionForm;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import co.id.infoflow.forms.TestForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.ServletRequestDataBinder;
 
 @Controller("/test")
 public class TestAction extends Action {
@@ -23,14 +25,15 @@ public class TestAction extends Action {
 	@Autowired
 	private TestService testService;
 
+	@Autowired
+	private TestForm testForm;
+
     public ActionForward execute(ActionMapping mapping, ActionForm form,
                                  HttpServletRequest request, HttpServletResponse response) {
-//		SpringBindingActionForm formTmp = (SpringBindingActionForm) form;
-//		TestForm bean = new TestForm();
-// 		ServletRequestDataBinder binder = new ServletRequestDataBinder(bean, "myPojo");
-// 		binder.bind(request);
-//		formTmp.expose(binder.getBindingResult(), request);
-		TestForm testForm = (TestForm) form;
+		SpringBindingActionForm formTmp = (SpringBindingActionForm) form;
+ 		ServletRequestDataBinder binder = new ServletRequestDataBinder( testForm, "TestForm");
+ 		binder.bind(request);
+		formTmp.expose(binder.getBindingResult(), request);
 		testForm.setValue( testService.getSay() );
 		System.out.println( testService.getSay() );
 		System.out.println( heheService.getHehe() );

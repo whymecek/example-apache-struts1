@@ -1,7 +1,9 @@
 package co.id.infoflow.forms;
  
 import org.apache.struts.action.ActionForm;
+import org.springframework.stereotype.Component;
 
+@Component
 public class TestForm extends ActionForm {
     private String value;
 

@@ -7,7 +7,7 @@
 
     <!-- ========== Form Bean Definitions ============ -->
     <form-beans>
-        <form-bean name="testForm" type="co.id.infoflow.forms.TestForm"/>
+        <form-bean name="testForm" type="no.hackeriet.struts1Spring.struts.SpringBindingActionForm"/>
     </form-beans>
 
     <!-- ========== Global Forward Definitions ========= -->
@@ -19,7 +19,8 @@
         <action path="/index" type="no.hackeriet.struts1Spring.struts.DelegatingActionProxy">
             <forward name="success" path="/WEB-INF/jsp/index.jsp"/>
         </action>
-        <action path="/test" type="no.hackeriet.struts1Spring.struts.DelegatingActionProxy">
+        <action path="/test" type="no.hackeriet.struts1Spring.struts.DelegatingActionProxy"
+                name="testForm" >
             <forward name="success" path="/WEB-INF/jsp/hehe.jsp"/>
         </action>
     </action-mappings>
