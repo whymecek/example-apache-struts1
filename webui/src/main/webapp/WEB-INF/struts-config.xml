@@ -32,7 +32,7 @@
     <message-resources parameter="applicationResources"/>
     <!-- configure spring -->
     <plug-in className="no.hackeriet.struts1Spring.struts.ContextLoaderPlugIn">
-        <set-property property="contextConfigLocation" value="/WEB-INF/applicationContext.xml" />
+        <set-property property="contextConfigLocation" value="/WEB-INF/dispatcher-servlet.xml" />
     </plug-in>
 
 <!--    <plug-in className="org.apache.struts.tiles.TilesPlugin" >-->

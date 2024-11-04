@@ -1,7 +1,7 @@
 package co.id.infoflow.actions;
 
 import co.id.infoflow.services.HeheService;
-import co.id.infoflow.services.TestService;
+import co.id.infoflow.services.ITestService;
 import no.hackeriet.struts1Spring.struts.SpringBindingActionForm;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
@@ -23,7 +23,7 @@ public class TestAction extends Action {
 	private HeheService heheService;
 
 	@Autowired
-	private TestService testService;
+	private ITestService testService;
 
 	@Autowired
 	private TestForm testForm;

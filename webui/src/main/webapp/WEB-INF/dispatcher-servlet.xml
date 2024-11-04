@@ -8,10 +8,10 @@
            http://www.springframework.org/schema/context
            http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:annotation-config/>
-    <context:component-scan base-package="co.id.infoflow,co.id.infoflow.services"/>
+<!--    <context:annotation-config/>-->
+    <context:component-scan base-package="co.id.infoflow"/>
 
-    <bean id="testService" class="co.id.infoflow.services.impl.TestServiceImpl"/>
+<!--    <bean id="testService" class="co.id.infoflow.services.TestService"/>-->
 <!--    <bean id="/index" class="co.id.infoflow.actions.IndexAction" />-->
 <!--    <bean id="/test" class="co.id.infoflow.actions.TestAction" />-->
 <!--    <bean id="testForm" class="co.id.infoflow.forms.TestForm" scope="prototype"/>-->
